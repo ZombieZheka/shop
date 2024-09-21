@@ -1,9 +1,9 @@
-// (admin)/dashboard/page.tsx
+// (user)/products/page.tsx
 
-export default async function Page() {
+export default function Page() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      Dashboard
+      Products
     </main>
   );
 }
