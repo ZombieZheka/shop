@@ -147,10 +147,10 @@ export default function SignUpForm() {
 }
 
 function SignUpButton() {
-  const { isPending } = useFormStatus();
+  const { pending } = useFormStatus();
 
   return (
-    <Button className="mt-4 w-full" aria-disabled={isPending}>
+    <Button className="mt-4 w-full" aria-disabled={pending}>
       Sign Up <ArrowRightIcon className="ml-auto h-5 w-5 text-gray-50" />
     </Button>
   );

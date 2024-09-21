@@ -11,7 +11,7 @@ export type User = {
   email: string;
   password: string;
   phoneNumber: string;
-  role: string;
+  role: 'admin' | 'user';
   createdAt: Date;
 };
 

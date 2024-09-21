@@ -128,15 +128,15 @@ async function seedImages(client: VercelPoolClient) {
   }
 }
 
-export async function GET() {
-  if (process.env.NODE_ENV === "production") {
-    return {
-      redirect: {
-        permanent: false,
-        destination: "/",
-      },
-    };
-  }
+export async function GET(): Promise<void | Response> {
+  // if (process.env.NODE_ENV === "production") {
+  //   return {
+  //     redirect: {
+  //       permanent: false,
+  //       destination: "/",
+  //     },
+  //   };
+  // }
 
   const client = await db.connect();
   try {
@@ -146,10 +146,10 @@ export async function GET() {
     await seedProducts(client);
     await seedImages(client);
     // await client.sql`COMMIT`;
-
-    return Response.json({ message: 'Database seeded successfully' });
+    // return Response.json({ message: 'Database seeded successfully' });
   } catch (error) {
     // await client.sql`ROLLBACK`;
     return Response.json({ error }, { status: 500 });
   }
+  return;
 }
