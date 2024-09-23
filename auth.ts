@@ -74,6 +74,7 @@ const config = {
       // },
     }),
   ],
+  secret: process.env.NEXTAUTH_SECRET,
   callbacks: {
     authorized({ auth, request: {nextUrl} }) {
       const user = auth?.user as ExtendedUser;
